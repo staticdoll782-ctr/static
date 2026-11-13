@@ -1,0 +1,493 @@
+<!DOCTYPE html><html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STATIC DOLL</title><style>
+:root {
+  --pink: #f0a4ce;
+  --pale: #fff0f8;
+  --black: #100b10;
+  --panel: #261522;
+  --muted: #d7a6c4;
+  --border: #c16d9d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--pale);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+header {
+  padding: 42px 16px;
+  text-align: center;
+  color: #24101e;
+  background: repeating-linear-gradient(
+    135deg,
+    #f0a4ce 0px,
+    #f0a4ce 4px,
+    #e58cbb 4px,
+    #e58cbb 7px
+  );
+  border-bottom: 5px double #24101e;
+}
+
+header h1 {
+  margin: 12px 0;
+  font-size: clamp(35px, 10vw, 62px);
+  letter-spacing: 5px;
+  overflow-wrap: anywhere;
+}
+
+.symbol {
+  font-size: 22px;
+  margin: 8px 0;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-style: italic;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 15px;
+  padding: 14px 8px;
+  background: #1d101c;
+  border-bottom: 1px solid var(--border);
+}
+
+nav a {
+  color: var(--pink);
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+main {
+  width: min(100% - 28px, 720px);
+  margin: auto;
+}
+
+section {
+  position: relative;
+  margin: 27px 0;
+  padding: clamp(17px, 5vw, 28px);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: 5px 5px 0 #49263e;
+  scroll-margin-top: 75px;
+}
+
+section::before {
+  content: "♡";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  color: #e8a0c8;
+  opacity: .65;
+  font-size: 13px;
+}
+
+.section-number {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+h2 {
+  color: var(--pink);
+  font-size: 25px;
+  font-weight: normal;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 12px;
+}
+
+h3 {
+  color: var(--pink);
+  font-size: 16px;
+}
+
+p, li {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+ul {
+  padding-left: 22px;
+}
+
+li::marker {
+  color: var(--pink);
+}
+
+.signature {
+  color: var(--pink);
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 23px 0;
+}
+
+.heart-divider {
+  text-align: center;
+  color: var(--pink);
+  letter-spacing: 8px;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.button {
+  display: block;
+  padding: 14px 12px;
+  margin: 12px 0;
+  text-align: center;
+  background: var(--pink);
+  color: #24101e;
+  border: 1px solid var(--pink);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+  transition: .2s;
+}
+
+.button:hover {
+  background: transparent;
+  color: var(--pink);
+}
+
+.outline {
+  background: transparent;
+  color: var(--pink);
+}
+
+.info-card {
+  margin: 14px 0;
+  padding: 15px;
+  background: #180f18;
+  border: 1px dashed var(--border);
+}
+
+.notice {
+  color: #d7bfd0;
+  font-size: 12px;
+}
+
+details {
+  margin: 12px 0;
+  background: #180f18;
+  border: 1px solid var(--border);
+}
+
+summary {
+  padding: 15px;
+  color: var(--pink);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+details p,
+details ul {
+  padding: 0 17px 15px;
+}
+
+.gif-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 22px auto;
+  padding: 10px;
+  background: #180f18;
+  border: 1px dashed var(--border);
+  overflow: hidden;
+}
+
+.gif-frame img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+}
+
+.gif-frame iframe {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: 280px;
+  border: 0;
+}
+
+.personal-note {
+  color: var(--pink);
+  font-size: 15px;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.9;
+  padding: 8px;
+}
+
+.closing {
+  text-align: center;
+}
+
+.closing .personal-note {
+  font-size: 16px;
+}
+
+footer {
+  padding: 30px 15px;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: #190f18;
+}
+
+footer p {
+  font-size: 11px;
+}
+
+@media (max-width: 420px) {
+  nav {
+    gap: 12px;
+  }
+}
+</style></head><body><header>
+  <p class="symbol">´ཀ</p>
+  <p class="eyebrow">Independent fashion · Handmade</p>
+  <h1>STATIC DOLL</h1>
+  <p class="subtitle">
+    Custom clothing & pieces made from scratch
+  </p>
+  <p class="symbol">૮꒰◞ ˕ ◟ ྀི꒱ა</p>
+</header><nav>
+  <a href="#inicio">INICIO</a>
+  <a href="#mi-mundo">MI MUNDO</a>
+  <a href="#comprar">PEDIDOS</a>
+  <a href="#pagos">PAGOS</a>
+  <a href="#politicas">POLÍTICAS</a>
+  <a href="#entregas">ENTREGAS</a>
+</nav><main><!-- INICIO --><section id="inicio">
+  <p class="section-number">001 / ESTE ES MI ESPACIO</p>
+  <h2>Bienvenid@ a STATIC DOLL</h2>  <p style="font-size:16px">
+    Ropa customizada, prendas únicas y diseños
+    confeccionados desde cero por mí.
+  </p>  <p>
+    Este es mi espacio para crear ropa, contenido
+    y experimentar con estilos para poder crear
+    mi propia esencia en ropa.
+  </p>  <div class="heart-divider">♡ ─── ♡ ─── ♡</div>  <p>
+    Espero que cada persona que tenga una prenda mía
+    tenga una parte de mí y valore mi arte tanto como
+    yo lo amo.
+  </p>  <p class="signature">´ཀ</p>  <a class="button" href="#comprar">
+    ¿CÓMO HAGO UN PEDIDO?
+  </a>  <a class="button outline" href="#politicas">
+    LEER LAS POLÍTICAS
+  </a>  <div class="info-card">
+    <h3>Contáctame</h3>
+    <p>
+      Si te gusta alguna prenda o tienes alguna duda,
+      contáctame aquí:
+    </p><a class="button"
+   href="https://www.instagram.com/static_dolll?rpxt=c2UzbXdzNmlmMDBx"
+   target="_blank" rel="noopener noreferrer">
+  INSTAGRAM — @STATIC_DOLLL
+</a>
+
+<a class="button outline"
+   href="https://wa.me/528334178463"
+   target="_blank" rel="noopener noreferrer">
+  WHATSAPP — 833 417 8463
+</a>
+
+  </div>  <p class="signature">૮꒰◞ ˕ ◟ ྀི꒱ა</p>
+</section><!-- MI MUNDO --><section id="mi-mundo">
+  <p class="section-number">002 / MI MUNDO</p>  <div class="gif-frame">
+    <img
+      src="https://media.giphy.com/media/7lsw8RenVcjCM/giphy.gif"
+      alt="Nyan Cat animado"
+      loading="lazy">
+  </div>  <p class="personal-note">Nyan Cat pasando por aquí</p>  <div class="heart-divider">´ཀ ♡ ´ཀ</div>  <div class="gif-frame">
+    <iframe
+      src="https://giphy.com/embed/41fW7nmowgOvkGgypC"
+      title="GIF decorativo"
+      loading="lazy"
+      allowFullScreen>
+    </iframe>
+  </div>  <p class="signature">⡞⠳⣄⣀⣠⠞⢷ ֹ۪</p>
+</section><!-- PEDIDOS --><section id="comprar">
+  <p class="section-number">003 / PEDIDOS</p>
+  <h2>¿Cómo comprar?</h2>  <div class="info-card">
+    <h3>Prendas confeccionadas desde cero</h3>
+    <ul>
+      <li>20% de anticipo al realizar el pedido.</li>
+      <li>30% cuando la prenda esté terminada.</li>
+      <li>50% restante al momento de la entrega.</li>
+    </ul>
+  </div>  <div class="info-card">
+    <h3>Prendas ya publicadas</h3>
+    <ul>
+      <li>50% para apartar la prenda.</li>
+      <li>50% restante el día de la entrega.</li>
+    </ul>
+  </div>  <h3>Tiempo de elaboración</h3>
+  <p>
+    El tiempo aproximado es de 2 días a 1 semana.
+    Algunos pedidos pueden estar listos el mismo día,
+    dependiendo del diseño y de los materiales.
+  </p>  <p>
+    Los detalles de cada pedido se hablan directamente
+    para ponernos de acuerdo con el diseño y la entrega.
+  </p><a class="button"
+href="https://wa.me/528334178463?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20STATIC%20DOLL.">
+QUIERO HACER UN PEDIDO
+</a>
+
+</section><!-- PAGOS --><section id="pagos">
+  <p class="section-number">004 / PAGOS</p>
+  <h2>Métodos de pago</h2>  <div class="info-card">
+    <p class="signature">´ཀ</p>
+    <h3 style="text-align:center">¿CÓMO PUEDES PAGAR?</h3>
+    <p style="text-align:center">
+      Efectivo<br>
+      Transferencia bancaria<br>
+      Tarjeta
+    </p>
+  </div>  <p>
+    Para las transferencias, puedes pedirme los datos
+    directamente por WhatsApp.
+  </p><a class="button"
+href="https://wa.me/528334178463?text=Hola%2C%20%C2%BFme%20pasas%20los%20datos%20para%20transferencia%3F">
+PEDIR DATOS DE TRANSFERENCIA
+</a>
+
+  <p class="notice">
+    Los datos bancarios no aparecen públicamente
+    en esta página.
+  </p>
+</section><!-- POLÍTICAS --><section id="politicas">
+  <p class="section-number">005 / ANTES DE COMPRAR</p>
+  <h2>Políticas de STATIC DOLL</h2>  <details open>
+    <summary>Cancelaciones</summary>
+    <p>
+      Si cancelas un pedido personalizado antes de
+      que empiece el trabajo y antes de comprar
+      materiales, se devuelve el anticipo completo.
+    </p>
+    <p>
+      Si ya se compraron materiales específicos para
+      tu pedido, el anticipo podrá no ser reembolsable,
+      conforme a lo acordado y a la legislación aplicable.
+    </p>
+    <p>
+      Si no puedo completar tu pedido, te devolveré
+      el dinero recibido por ese pedido.
+    </p>
+  </details>  <details>
+    <summary>Modificaciones</summary>
+    <p>
+      Para prendas confeccionadas desde cero hay
+      hasta 3 oportunidades de solicitar modificaciones,
+      acordadas durante el proceso.
+    </p>
+    <p>
+      Las prendas ya publicadas no se modifican
+      de forma personalizada.
+    </p>
+  </details>  <details>
+    <summary>Entregas pendientes</summary>
+    <p>
+      Tenemos hasta 3 oportunidades para coordinar
+      la entrega. Si no se concreta un pedido
+      personalizado, hablaremos para resolverlo
+      conforme a lo acordado y a la legislación aplicable.
+    </p>
+    <p>
+      En prendas ya publicadas se buscará llegar
+      a un acuerdo.
+    </p>
+  </details>  <details>
+    <summary>Revisión de la prenda</summary>
+    <p>
+      Te recomiendo revisar tu prenda cuando la recibas
+      y avisarme si detectas algún problema.
+    </p>
+    <p>
+      No se aceptan devoluciones por cambio de opinión,
+      salvo cuando corresponda conforme a la legislación
+      aplicable. Esto no elimina los derechos legales
+      del consumidor por defectos o incumplimientos.
+    </p>
+  </details>
+</section><!-- ENTREGAS --><section id="entregas">
+  <p class="section-number">006 / NOS VEMOS</p>
+  <h2>Puntos de entrega</h2>  <p>Los puntos habituales son:</p>  <ul>
+    <li>Ampliación</li>
+    <li>Centro de Tampico</li>
+    <li>Centro de Altamira</li>
+    <li>Divisoria</li>
+    <li>Altama</li>
+  </ul>  <div class="info-card">
+    <h3>¿Otro lugar?</h3>
+    <p>
+      Podemos consultar otros puntos. La posibilidad
+      de entrega y cualquier costo adicional dependen
+      de la ubicación y del horario.
+    </p>
+  </div><a class="button"
+href="https://wa.me/528334178463?text=Hola%2C%20quiero%20consultar%20los%20puntos%20de%20entrega.">
+CONSULTAR ENTREGAS
+</a>
+
+</section><!-- DESPEDIDA --><section class="closing">
+  <p class="section-number">007 / CON CARIÑO</p>
+  <h2>Gracias por estar aquí</h2>  <p class="personal-note">
+    Gracias por darle una oportunidad a un pedazo
+    de mi arte y de mi alma.
+  </p>  <p>
+    Espero que ames tus prendas tanto como yo
+    las adoro y las amo.
+  </p>  <div class="heart-divider">♡ ── ♡ ── ♡</div>  <p class="signature">
+    ૮꒰◞ ˕ ◟ ྀི꒱ა
+  </p><a class="button"
+href="https://www.instagram.com/static_dolll?rpxt=c2UzbXdzNmlmMDBx"
+target="_blank" rel="noopener noreferrer">
+NOS VEMOS EN INSTAGRAM
+</a>
+
+  <p class="signature">´ཀ ♡</p>
+</section></main><footer>
+  <p>STATIC DOLL</p>
+  <p>૮꒰◞ ˕ ◟ ྀི꒱ა</p>
+  <p class="signature">⡞⠳⣄⣀⣠⠞⢷ ֹ۪</p>
+</footer></body>
+</html>
